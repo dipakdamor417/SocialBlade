@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;500;600&family=Lato:ital,wght@0,100;1,700&family=Montserrat:ital,wght@0,200;0,300;1,100&family=Poppins:wght@200;500;800&family=Satisfy&family=Sometype+Mono&display=swap');
+
+html,
+body,
+#root,
+
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Satisfy', cursive;
+  font-family: 'Sometype Mono', monospace;
+}
