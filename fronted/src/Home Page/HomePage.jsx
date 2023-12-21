@@ -9,12 +9,13 @@ import AdvertWidget from '../widget/AdvertWidget';
 import FriendListWidget from '../widget/FriendListWidget';
 
 const HomePage = () => {
+
     const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
     const { _id, picturepath } = useSelector((state) => state.user);
   
     return (
       <Box>
-        <Navbar />
+        <Navbar id={_id} />
         <Box
           width="100%"
           padding="2rem 6%"

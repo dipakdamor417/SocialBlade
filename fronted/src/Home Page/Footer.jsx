@@ -10,7 +10,7 @@ const Footer = () => {
 
             <Box textAlign="center" >
                 <Typography fontSize="25px" color="black">
-                    @socialBlade Policy 2023-24
+                    @SocialBlade Policy 2023-24
                 </Typography>
             </Box>
         </>

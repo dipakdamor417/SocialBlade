@@ -65,14 +65,13 @@ app.use("/posts", postRoutes)
 
 // mongoose setup
 const PORT = process.env.PORT || 3001; // if port not working other port 3001
-mongoose.connect(process.env.MONGO_URL).then(() => {
+mongoose.connect("mongodb://localhost:27017/SocialPedia").then(() => {
     console.log("Connected to db")
     app.listen(PORT, () => {
         console.log(`Listening on port ${PORT}`);
-
-        // dummy data adding one time only
+        // dummy data adding on
+        // Post.insertMany(posts);e time only
         // User.insertMany(users);
-        // Post.insertMany(posts);
     })
 }).catch((error) => {
     console.error("Error connecting to db:", error)

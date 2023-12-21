@@ -30,9 +30,10 @@ const ProfilePage = () => {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     if (!user) return null;
+    
     return (
         <Box>
-          <Navbar />
+          <Navbar  id={userId}/>
           <Box
             width="100%"
             padding="2rem 6%"

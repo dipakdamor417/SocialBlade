@@ -5,10 +5,12 @@ import Post from '../model/Post.js'
 // create a post
 export const createPost=async (req,res)=>{
     try{
-        const { userId,description,picturePath} = req.body;
+        const { userId,description,picturepath,userPicturePath} = req.body;
+        console.log(picturepath);
+        console.log(userPicturePath);
         const user = await User.findById(userId);
         const newPost = new Post({
-            userId,firstname:user.firstname,lastname:user.lastname,location:user.location,description,userPicturePath:user.picturePath,picturePath,likes:{},comments:[]
+            userId,firstname:user.firstname,lastname:user.lastname,location:user.location,description,userPicturePath:userPicturePath,picturepath,likes:{},comments:[]
         })
 
         await newPost.save();
