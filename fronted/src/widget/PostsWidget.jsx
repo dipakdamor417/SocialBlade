@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../state";
 import PostWidget from "./PostWidget";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
-    const [user, setUser] = useState();
+
+    // const [user, setUser] = useState("");
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts);
-    console.log(posts);
     const token = useSelector((state) => state.token);
 
     const getUser = async () => {
@@ -16,8 +16,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
             headers: { Authorization: `mynamei ${token}` },
         });
         console.log(response);
-        const data = await response.json();
-        setUser(data);
+    
     };
 
     const getPosts = async () => {
@@ -60,7 +59,8 @@ const PostsWidget = ({ userId, isProfile = false }) => {
                     lastname,
                     description,
                     location,
-                    picturePath,
+                    picturepath,
+                    userPicturePath,
                     likes,
                     comments,
                 }) => (
@@ -71,8 +71,8 @@ const PostsWidget = ({ userId, isProfile = false }) => {
                         name={`${firstname} ${lastname}`}
                         description={description}
                         location={location}
-                        picturePath={picturePath}
-                        userPicturePath={user?.picturepath} // Use user?.picturepath to avoid errors if user is not yet loaded
+                        picturepath={picturepath}
+                        userPicturePath={userPicturePath} // Use user?.picturepath to avoid errors if uis not yet loaded
                         likes={likes}
                         comments={comments}
                     />

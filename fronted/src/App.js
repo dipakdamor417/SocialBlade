@@ -1,5 +1,4 @@
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
-import HomePage from './Home Page/HomePage';
 import LoginPage from './Home Page/loginPage';
 import ProfilePage from './Components/ProfilePage'
 import { useMemo } from "react"
@@ -7,8 +6,9 @@ import { useSelector } from 'react-redux'
 import { CssBaseline, ThemeProvider } from "@mui/material"
 import { createTheme } from "@mui/material/styles"
 import { themeSettings } from './theme';
-import { ForNot } from './Components/ForNot';
 import MainPage from './Home Page/MainPage';
+import HomeRoutes from './Home Page/HomeRoute/HomeRoutes';
+import ForNot from './Components/ForNot';
 
 function App() {
   const mode = useSelector((state => state.mode));
@@ -23,7 +23,7 @@ function App() {
             <Route path='/' element={<MainPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<LoginPage />} />
-            <Route path='/home' element={ isAuth ? <HomePage/> :<Navigate to="/" />} />
+            <Route path='/home/*' element={ isAuth ? <HomeRoutes/> :<Navigate to="/" />} />
             <Route path='/profile/:userId' element={ isAuth ? <ProfilePage />:<Navigate to="/" />} />
             <Route path="*" element={<ForNot />} />
           </Routes>

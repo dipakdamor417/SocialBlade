@@ -41,9 +41,10 @@ import { setPosts } from "../state";
       const formData = new FormData();
       formData.append("userId", _id);
       formData.append("description", post);
+      formData.append("userPicturePath",picturepath);
       if (image) {
         formData.append("picture", image);
-        formData.append("picturePath", image.name);
+        formData.append("picturepath", image.name);
       }
   
       const response = await fetch(`http://localhost:3001/posts`, {
